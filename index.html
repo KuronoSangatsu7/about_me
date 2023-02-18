@@ -50,6 +50,83 @@
 
             </div>
 
+            <div class="hw2">
+                <button id="fetch-id">Comics?</button>
+                <div id="comic-title"></div>
+                <img id="comic" />
+                <div id="upload-date"></div>
+            </div>
+
         </div>
+
+        <script>
+            const fetchBtn = document.getElementById('fetch-id')
+            const comicImg = document.getElementById('comic')
+            const dateDiv = document.getElementById('upload-date')
+            const titleDiv = document.getElementById('comic-title')
+
+            const fetchComicID = (email) => {
+                const paramsObj = {email: email}
+                const params = new URLSearchParams(paramsObj)
+
+                return fetch('https://fwd.innopolis.app/api/hw2?' + params.toString())
+                    .then(r => r.json())
+            }
+            
+            const fetchComic = (id) => {
+                const paramsObj = {num: id}
+                const params = new URLSearchParams(paramsObj)
+
+                return fetch('https://getxkcd.vercel.app/api/comic?' + params.toString())
+                    .then(r => r.json())
+            }
+
+            const setAttributes = (element, atts) => {
+                for (let key in atts)
+                    element.setAttribute(key, atts[key])
+            }
+
+            const handleComicObj = (comicObj) => {
+                // Image
+                const imgSrc = comicObj['img']
+
+                // Title
+                const imgTitle = comicObj['title']
+
+                // Alt text
+                const imgAlt = comicObj['alt']
+
+                // Date
+                const day = comicObj['day']
+                const month = comicObj['month']
+                const year = comicObj['year']
+
+                let imgDate = new Date(year, month, day)
+
+                imgDate = imgDate.toLocaleDateString('en-GB')
+
+                atts = {src: imgSrc,
+                        title: imgTitle,
+                        alt: imgAlt,
+                        height: 300,
+                        width: 400
+                    }
+
+                setAttributes(comicImg, atts)
+                dateDiv.innerText = "Upload Date: " + imgDate
+                titleDiv.innerText = imgTitle
+            }
+
+            fetchBtn.addEventListener('click', async () => {
+                const comicID = await fetchComicID('j.totanji@innopolis.university')
+
+                const comicObj = await fetchComic(comicID)
+
+                handleComicObj(comicObj)
+
+            })
+
+        </script>
+
     </body>
 </html>
