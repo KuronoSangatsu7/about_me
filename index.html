@@ -10,7 +10,7 @@
     <body>
         <nav class="nav-bar">
             <div class="nav-item nav-logo">
-                <img src="./assets/game.svg" class="icon" />
+                <img src="./assets/game.svg" alt="Game Icon" class="icon" />
             </div>
             <div class="nav-item"><a href="#">Projects</a></div>
             <div class="nav-item"><a href="#">Something else</a></div>
@@ -19,7 +19,7 @@
         <div class="main-contents">
 
             <div class="bio">
-                <h5>Hi, I'm Jaffar Totanji</h5>
+                <h1>Hi, I'm Jaffar Totanji</h1>
                 <div>I've never written a bio I'll think about one later</div>
             </div>
 
@@ -33,34 +33,32 @@
 
             <div class="contacts">
                 <a href="https://github.com/KuronoSangatsu7" target="_blank" id="gh-link">
-                    <img src="./assets/github.png" class="contact-icon" />
+                    <img src="./assets/github.png" alt="Github" class="contact-icon" />
                 </a>
 
                 <a href="https://www.linkedin.com/in/jaffar-totanji/" target="_blank" id="li-link">
-                    <img src="./assets/linkedin.png" class="contact-icon" />
+                    <img src="./assets/linkedin.png" alt="LinkedIn" class="contact-icon" />
                 </a>
                 
                 <a href="https://t.me/KuroHata7" target="_blank" id="tg-link">
-                    <img src="./assets/telegram.png" class="contact-icon" />
+                    <img src="./assets/telegram.png" alt="Telegram" class="contact-icon" />
                 </a>
 
                 <a href="mailto:jaafarti@gmail.com" target="_blank" id="email">
-                    <img src="./assets/mail.png" class="contact-icon" />
+                    <img src="./assets/mail.png" alt="Mail" class="contact-icon" />
                 </a>
 
             </div>
 
             <div class="hw2">
-                <button id="fetch-id">Comics?</button>
-                <div id="comic-title"></div>
-                <img id="comic" />
-                <div id="upload-date"></div>
+                <div id="comic-title">Loading Title...</div>
+                <img id="comic" src="https://via.placeholder.com/400x300/FFFFFF/000000" alt="Placeholder" />
+                <div id="upload-date">Upload Date: </div>
             </div>
 
         </div>
 
         <script>
-            const fetchBtn = document.getElementById('fetch-id')
             const comicImg = document.getElementById('comic')
             const dateDiv = document.getElementById('upload-date')
             const titleDiv = document.getElementById('comic-title')
@@ -117,14 +115,15 @@
                 titleDiv.innerText = imgTitle
             }
 
-            fetchBtn.addEventListener('click', async () => {
+            const loadComic = async () => {
                 const comicID = await fetchComicID('j.totanji@innopolis.university')
 
                 const comicObj = await fetchComic(comicID)
 
                 handleComicObj(comicObj)
+            }
 
-            })
+            loadComic()
 
         </script>
 

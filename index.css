@@ -3,6 +3,7 @@
 html {
     height: 100%;
     font-family: 'Coda', cursive;
+    font-variant-ligatures: none;
 }
 
 body {
@@ -80,11 +81,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-#fetch-id {
-    width: 70px;
-    align-self: center;
 }
 
 #comic-title {
