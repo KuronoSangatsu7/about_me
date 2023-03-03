@@ -5,15 +5,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Jaffar's Creations</title>
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="./index.css">
     </head>
     <body>
         <nav class="nav-bar">
             <div class="nav-item nav-logo">
-                <img src="./assets/game.svg" alt="Game Icon" class="icon" />
+                <img src="./assets/game.svg" alt="Game Icon" class="icon">
             </div>
-            <div class="nav-item"><a href="#">Projects</a></div>
-            <div class="nav-item"><a href="#">Something else</a></div>
+            <div class="nav-item"><a href="./projects.html">Projects</a></div>
+            <div class="nav-item"><a href="./something.html">Something else</a></div>
         </nav>
 
         <div class="main-contents">
@@ -33,98 +33,32 @@
 
             <div class="contacts">
                 <a href="https://github.com/KuronoSangatsu7" target="_blank" id="gh-link">
-                    <img src="./assets/github.png" alt="Github" class="contact-icon" />
+                    <img src="../assets/github.png" alt="Github" class="contact-icon">
                 </a>
 
                 <a href="https://www.linkedin.com/in/jaffar-totanji/" target="_blank" id="li-link">
-                    <img src="./assets/linkedin.png" alt="LinkedIn" class="contact-icon" />
+                    <img src="../assets/linkedin.png" alt="LinkedIn" class="contact-icon">
                 </a>
                 
                 <a href="https://t.me/KuroHata7" target="_blank" id="tg-link">
-                    <img src="./assets/telegram.png" alt="Telegram" class="contact-icon" />
+                    <img src="../assets/telegram.png" alt="Telegram" class="contact-icon">
                 </a>
 
                 <a href="mailto:jaafarti@gmail.com" target="_blank" id="email">
-                    <img src="./assets/mail.png" alt="Mail" class="contact-icon" />
+                    <img src="../assets/mail.png" alt="Mail" class="contact-icon">
                 </a>
 
             </div>
 
             <div class="hw2">
                 <div id="comic-title">Loading Title...</div>
-                <img id="comic" src="https://via.placeholder.com/400x300/FFFFFF/000000" alt="Placeholder" />
+                <img id="comic" src="https://via.placeholder.com/400x300/FFFFFF/000000" alt="Placeholder">
                 <div id="upload-date">Upload Date: </div>
             </div>
 
         </div>
 
-        <script>
-            const comicImg = document.getElementById('comic')
-            const dateDiv = document.getElementById('upload-date')
-            const titleDiv = document.getElementById('comic-title')
-
-            const fetchComicID = (email) => {
-                const paramsObj = {email: email}
-                const params = new URLSearchParams(paramsObj)
-
-                return fetch('https://fwd.innopolis.app/api/hw2?' + params.toString())
-                    .then(r => r.json())
-            }
-            
-            const fetchComic = (id) => {
-                const paramsObj = {num: id}
-                const params = new URLSearchParams(paramsObj)
-
-                return fetch('https://getxkcd.vercel.app/api/comic?' + params.toString())
-                    .then(r => r.json())
-            }
-
-            const setAttributes = (element, atts) => {
-                for (let key in atts)
-                    element.setAttribute(key, atts[key])
-            }
-
-            const handleComicObj = (comicObj) => {
-                // Image
-                const imgSrc = comicObj['img']
-
-                // Title
-                const imgTitle = comicObj['title']
-
-                // Alt text
-                const imgAlt = comicObj['alt']
-
-                // Date
-                const day = comicObj['day']
-                const month = comicObj['month']
-                const year = comicObj['year']
-
-                let imgDate = new Date(year, month, day)
-
-                imgDate = imgDate.toLocaleDateString('en-GB')
-
-                atts = {src: imgSrc,
-                        title: imgTitle,
-                        alt: imgAlt,
-                        height: 300,
-                        width: 400
-                    }
-
-                setAttributes(comicImg, atts)
-                dateDiv.innerText = "Upload Date: " + imgDate
-                titleDiv.innerText = imgTitle
-            }
-
-            const loadComic = async () => {
-                const comicID = await fetchComicID('j.totanji@innopolis.university')
-
-                const comicObj = await fetchComic(comicID)
-
-                handleComicObj(comicObj)
-            }
-
-            loadComic()
-
+        <script src="./bundle.js">
         </script>
 
     </body>
