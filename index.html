@@ -1,65 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Jaffar's Creations</title>
-        <link rel="stylesheet" href="./index.css">
-    </head>
-    <body>
-        <nav class="nav-bar">
-            <div class="nav-item nav-logo">
-                <img src="./assets/game.svg" alt="Game Icon" class="icon">
-            </div>
-            <div class="nav-item"><a href="./projects.html">Projects</a></div>
-            <div class="nav-item"><a href="./something.html">Something else</a></div>
-        </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jaffar's Creations</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Coda&display=swap");
 
-        <div class="main-contents">
+    html {
+      height: 100%;
+      font-family: "Coda", cursive;
+      font-variant-ligatures: none;
+      font-size: x-large;
+    }
 
-            <div class="bio">
-                <h1>Hi, I'm Jaffar Totanji</h1>
-                <div>I've never written a bio I'll think about one later</div>
-            </div>
+    body {
+      margin: 0;
+      height: 100%;
+    }
 
-            <div class="projects">
-                <ul>
-                    <li>Project_1</li>
-                    <li>Project_2</li>
-                    <li>Project_3</li>
-                </ul>
-            </div>
+    #app {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
 
-            <div class="contacts">
-                <a href="https://github.com/KuronoSangatsu7" target="_blank" id="gh-link">
-                    <img src="../assets/github.png" alt="Github" class="contact-icon">
-                </a>
-
-                <a href="https://www.linkedin.com/in/jaffar-totanji/" target="_blank" id="li-link">
-                    <img src="../assets/linkedin.png" alt="LinkedIn" class="contact-icon">
-                </a>
-                
-                <a href="https://t.me/KuroHata7" target="_blank" id="tg-link">
-                    <img src="../assets/telegram.png" alt="Telegram" class="contact-icon">
-                </a>
-
-                <a href="mailto:jaafarti@gmail.com" target="_blank" id="email">
-                    <img src="../assets/mail.png" alt="Mail" class="contact-icon">
-                </a>
-
-            </div>
-
-            <div class="hw2">
-                <div id="comic-title">Loading Title...</div>
-                <img id="comic" src="https://via.placeholder.com/400x300/FFFFFF/000000" alt="Placeholder">
-                <div id="upload-date">Upload Date: </div>
-            </div>
-
-        </div>
-
-        <script src="./dist/bundle.js">
-        </script>
-
-    </body>
+  </style>
 </html>
