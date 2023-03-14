@@ -1,5 +1,5 @@
-<script>
-  import gameLogo from "../assets/game.svg";
+<script lang="ts">
+  import gameLogo from "../../assets/game.svg";
 </script>
 
 <nav class="nav-bar">

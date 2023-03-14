@@ -1,8 +1,8 @@
-<script>
-  import gitHubLogo from './assets/github.png'
-  import telegramLogo from './assets/telegram.png'
-  import linkedinLogo from './assets/linkedin.png'
-  import mailLogo from './assets/mail.png'
+<script lang="ts">
+  import gitHubLogo from '../assets/github.png'
+  import telegramLogo from '../assets/telegram.png'
+  import linkedinLogo from '../assets/linkedin.png'
+  import mailLogo from '../assets/mail.png'
 </script>
 
 <div class="bio">

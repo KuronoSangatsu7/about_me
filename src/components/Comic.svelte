@@ -52,18 +52,18 @@
 
     const comicObj = await fetchComic(comicID);
 
-    imgSrc = comicObj["img"];
+    imgSrc = comicObj.img;
 
     // Title
-    imgTitle = comicObj["title"];
+    imgTitle = comicObj.title;
 
     // Alt text
-    imgAlt = comicObj["alt"];
+    imgAlt = comicObj.alt;
 
     // Date
-    const day = parseInt(comicObj["day"]);
-    const month = parseInt(comicObj["month"]) - 1;
-    const year = parseInt(comicObj["year"]);
+    const day = parseInt(comicObj.day);
+    const month = parseInt(comicObj.month) - 1;
+    const year = parseInt(comicObj.year);
 
     const imgDate = new Date(year, month, day);
 

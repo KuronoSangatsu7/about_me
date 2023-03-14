@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import NavBar from "./components/NavBar.svelte";
   import Comic from "./components/Comic.svelte";
   import Content from "./Content.svelte";
