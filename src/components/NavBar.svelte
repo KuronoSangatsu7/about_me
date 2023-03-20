@@ -1,14 +1,15 @@
 <script lang="ts">
 	import gameLogo from '../public/game.svg';
+	import { base } from '$app/paths';
 </script>
 
 <nav class="nav-bar">
 	<div class="nav-item nav-logo">
 		<img src={gameLogo} alt="Game Icon" class="icon" />
 	</div>
-	<a class="nav-item" href="/">Home</a>
-	<a class="nav-item" href="/projects">Projects</a>
-	<a class="nav-item" href="/comic">Comic?</a>
+	<a class="nav-item" href="{base}">Home</a>
+	<a class="nav-item" href="{base}/projects">Projects</a>
+	<a class="nav-item" href="{base}/comic">Comic?</a>
 </nav>
 
 <style>
