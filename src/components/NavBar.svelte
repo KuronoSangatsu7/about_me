@@ -7,7 +7,7 @@
 	<div class="nav-item nav-logo">
 		<img src={gameLogo} alt="Game Icon" class="icon" />
 	</div>
-	<a class="nav-item" href="{base}">Home</a>
+	<a class="nav-item" href="{base}/">Home</a>
 	<a class="nav-item" href="{base}/projects">Projects</a>
 	<a class="nav-item" href="{base}/comic">Comic?</a>
 </nav>
