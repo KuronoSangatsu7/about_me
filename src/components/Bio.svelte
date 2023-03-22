@@ -1,6 +1,6 @@
 <div class='main-contents'>
 	<div class="bio">
-		<h1>Hi, I'm Jaffar Totanji :D</h1>
+		<h1>Hi, I'm Jaffar Totanji</h1>
 		<div>*Insert Bio*</div>
 	</div>
 

@@ -1,5 +1,6 @@
 <script lang="ts">
-    import Comic from "../../components/Comic.svelte";
+	import Comic from '../../components/Comic.svelte';
+	const comicApi = 'https://getxkcd.vercel.app/api/comic?';
 </script>
 
-<Comic />
+<Comic comicAPIAddress={comicApi} />

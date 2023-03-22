@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	export let comicAPIAddress : string;
+
 	interface comicIDRequest {
 		email: string;
 	}
@@ -29,7 +31,7 @@
 		const paramsObj = { num: id.toString() };
 		const params = new URLSearchParams(paramsObj);
 
-		return fetch('https://getxkcd.vercel.app/api/comic?' + params.toString()).then((r) => r.json());
+		return fetch(comicAPIAddress + params.toString()).then((r) => r.json());
 	};
 
 	let imgSrc: string = 'https://via.placeholder.com/400x300/FFFFFF/000000';
